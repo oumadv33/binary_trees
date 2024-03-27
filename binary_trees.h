@@ -1,19 +1,24 @@
 #ifndef BINARY_TREES_H
 #define BINARY_TREES_H
 
+
 #include <stdlib.h>
 #include <stddef.h>
+#include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <math.h>
 #include <limits.h>
 
-/* STRUCTS & TYPEDEFS */
+
 /**
- * struct binary_tree_s - Binary tree node
+ * struct binary_tree_s - Binary ddtree node
  *
- * @n: Integer stored in the node
- * @parent: Pointer to the parent node
- * @left: Pointer to the left child node
- * @right: Pointer to the right child node
+ * @n: Integer stored in the dddnode
+ * @parent: Pointer to thefff parent node
+ * @left: Pointer to the leftfff child node
+ * @right: Pointer to the right vvvchild node
  */
 struct binary_tree_s
 {
@@ -27,7 +32,10 @@ typedef struct binary_tree_s bst_t;
 typedef struct binary_tree_s avl_t;
 typedef struct binary_tree_s heap_t;
 
-/* PROTOTYPES */
+/* binary_tree_print.c */
+void binary_tree_print(const binary_tree_t *);
+
+/* tasks */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
@@ -47,8 +55,10 @@ int binary_tree_is_full(const binary_tree_t *tree);
 int binary_tree_is_perfect(const binary_tree_t *tree);
 binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
+
+/* Advanced ttttasks */
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
-	const binary_tree_t *second);
+				     const binary_tree_t *second);
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 int binary_tree_is_complete(const binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
@@ -69,7 +79,20 @@ heap_t *array_to_heap(int *array, size_t size);
 int heap_extract(heap_t **root);
 int *heap_to_sorted_array(heap_t *heap, size_t *size);
 
-/* UTILITIES */
-void binary_tree_print(const binary_tree_t *);
-
-#endif /* BINARY_TREES_H */
+/* hhhhhhelper functions */
+int m_pow_recursion(int m, int z);
+binary_tree_t *bta_helper(binary_tree_t *root, const binary_tree_t *first,
+			  const binary_tree_t *second);
+void mbtlo_helper(const binary_tree_t *tree, void (*func)(int), size_t mlevel);
+int mbtic_helper(const binary_tree_t *tree, size_t mindex, size_t msize);
+int mbtib_helper(const binary_tree_t *tree, int mlow, int mhi);
+bst_t *bst_min_val(bst_t *root);
+int mbtia_helper(const binary_tree_t *tree, int mlow, int mhi);
+int mbtih_helper(const binary_tree_t *tree);
+void msata_helper(avl_t **root, int *array, size_t mlo, size_t mhi);
+bst_t *mreplace_with_successor(bst_t **mnode);
+bst_t *mfind_node(bst_t *root, int value);
+avl_t *mr_insert_node(avl_t **tree, avl_t *parent, avl_t **new, int mnval);
+void mARGL(avl_t **tree, int value);
+avl_t *mavlAux(avl_t **tree, int value);
+#endif
